@@ -1,9 +1,8 @@
+import 'package:ecommerce/src/pages/auth_page.dart';
 import 'package:ecommerce/src/pages/cart_page.dart';
 import 'package:ecommerce/src/pages/manager_view.dart';
 import 'package:ecommerce/src/pages/shop_page.dart';
 import 'package:flutter/material.dart';
-
-import 'pages/home_page.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -13,7 +12,7 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  handleDarkMode(darkMode){
+  handleDarkMode(darkMode) {
     return darkMode ? ThemeData.dark() : ThemeData.light();
   }
 
@@ -21,11 +20,11 @@ class _AppState extends State<App> {
   Widget build(context) {
     return MaterialApp(
       theme: handleDarkMode(false),
-      home: const HomePage(),
-      routes:{  
-      '/manager' :(context) => const ManagerView(),
-      '/shop' :(context) => const ShopPage(),
-      '/cart' :(context) => const CartPage(),
+      home: const AuthPage(),
+      routes: {
+        '/manager': (context) => const ManagerView(),
+        '/shop': (context) => const ShopPage(),
+        '/cart': (context) => const CartPage(),
       },
     );
   }
